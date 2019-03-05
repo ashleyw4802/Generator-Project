@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Generator Planning</title>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+        $(function() {
+            $("input:submit").click(function() {
+                var yesCounter = 0;
+                var noCounter = 0;
+
+                for (var i = 0; i < $("div > input:checked").length; i++) {
+                    if ($("div > input:checked")[i].value === "yes") yesCounter++
+                        else noCounter++
+                }
+
+                $("h2").html("You are " + ((yesCounter / 6) * 100) + "% naughty & " + ((noCounter / 6) * 100) + "% nice!")
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>NICE OR NAUGTY QUIZ</h1>
+    <div>
+        <!--6 questions for the quiz-->
+        Q1: Have you used your phone at the dinner table?
+        <input type="radio" name="Q1" value="yes"> Yes<br>
+        <input type="radio" name="Q1" value="no"> No<br> 
+        Q2: Have you arrived late to anything?
+        <input type="radio" name="Q2" value="yes"> Yes<br>
+        <input type="radio" name="Q2" value="no"> No<br> 
+        Q3: Have you forgotten a friend or family member's birthday?
+        <input type="radio" name="Q3" value="yes"> Yes<br>
+        <input type="radio" name="Q3" value="no"> No<br>
+        Q4: Have you flaked out on plans at the last minute?
+        <input type="radio" name="Q4" value="yes"> Yes<br>
+        <input type="radio" name="Q4" value="no"> No<br> 
+        Q5: Have you ever cheated on a test?
+        <input type="radio" name="Q5" value="yes"> Yes<br>
+        <input type="radio" name="Q5" value="no"> No<br>
+        Q6: Have you been petty or passive-aggressive?
+        <input type="radio" name="Q6" value="yes"> Yes<br>
+        <input type="radio" name="Q6" value="no"> No<br>
+
+    </div>
+
+
+    <input type="submit">
+
+    <h2>
+    </h2>
+</body>
+
+</html>
